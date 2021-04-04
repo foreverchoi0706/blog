@@ -8,6 +8,7 @@
 /out/
 # production
 */build
+*/.next
 # misc
 .DS_Store
 *.pem
@@ -22,3 +23,4 @@ yarn-error.log*
 .env.production.local
 # vercel
 .vercel
+
