@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Aside = () => {
   return (
-    <aside className="lg:border-2 mr-1 w-72 p-5 sm:absolute">
+    <aside className="border-2 mr-1 w-72 p-5">
       <nav>
         <li>
           <Link href="/">TEST</Link>
@@ -29,7 +29,7 @@ const Aside = () => {
       <div className="flex justify-around p-5">
         <a href="https://github.com/foreverchoi0706" target="blank">
           <Image
-            src="/github.png"
+            src="/images/github.png"
             alt="Picture of the author"
             width={48}
             height={48}
@@ -37,15 +37,7 @@ const Aside = () => {
         </a>
         <a href="mailto:foreverchoi0706@gmail.com">
           <Image
-            src="/mail.png"
-            alt="Picture of the author"
-            width={48}
-            height={48}
-          />
-        </a>
-        <a href="mailto:foreverchoi0706@gmail.com">
-          <Image
-            src="/mail.png"
+            src="/images/mail.png"
             alt="Picture of the author"
             width={48}
             height={48}

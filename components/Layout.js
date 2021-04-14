@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
         <Header />
         <div className="flex">
           <Aside />
-          <article className="border-2 flex-grow h-screen">{children}</article>
+          <article className="border-2 flex-grow">{children}</article>
         </div>
         <Footer />
       </div>
