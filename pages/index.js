@@ -46,10 +46,11 @@ const Wh96Image = ({ src }) => {
 export default function Home() {
   return (
     <Layout>
-      <section className="p-5">
-        <h2 className="font-bold text-2xl m-3">Intro</h2>
+      <section className="pl-5 pr-5">
+        <h2 id="Intro" className="font-bold text-2xl mt-10 mb-10">Intro</h2>
         <Image
           className="w-screen"
+          alt="me"
           src="/images/me.jpg"
           layout="responsive"
           width={5}
@@ -60,8 +61,8 @@ export default function Home() {
       <hr />
 
       <section className="p-5">
-        <h2 className="font-bold text-2xl m-3">History</h2>
-        <ul className="flex flex-col md:flex-row gap-1">
+        <h2 id="History" className="font-bold text-2xl mt-10 mb-10">History</h2>
+        <ul className="flex flex-col lg:flex-row gap-1">
           {careers.map((career, index) => (
             <li
               key={index}
@@ -73,7 +74,7 @@ export default function Home() {
               </h3>
               <ul className="list-disc p-5">
                 {career.descriptions.map((description) => (
-                  <li className="mt-5 mb-5" key={index}>
+                  <li className="text-sm mt-10 mb-10 sm:text-base" key={index}>
                     {description}
                   </li>
                 ))}
@@ -87,7 +88,7 @@ export default function Home() {
       <hr />
 
       <section className="p-5">
-        <h2 className="font-bold text-2xl m-3">Stack</h2>
+        <h2 id="Stack" className="font-bold text-2xl mt-10 mb-10">Stack</h2>
         <ul className="grid grid-cols-2 justify-items-center gap-5 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
           {stacks.map((stack, index) => (
             <li key={index}>
@@ -97,6 +98,17 @@ export default function Home() {
         </ul>
       </section>
       <hr />
+
+      <section className="p-5">
+        <h2 id="Portfolio" className="font-bold text-2xl mt-10 mb-10">Portfolio</h2>
+        <ul className="grid grid-cols-2 justify-items-center gap-5 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+          {stacks.map((stack, index) => (
+            <li key={index}>
+              <Wh96Image src={`/images/${stack}.png`} />
+            </li>
+          ))}
+        </ul>
+      </section>
     </Layout>
   );
 }

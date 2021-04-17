@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Header = () => {
+const navs = ["Dev", "Life", "Etc"];
+
+const Header = ({ handleClick }) => {
   return (
     <header className="border-r-2 border-b-2 border-l-2 p-5 mb-1 flex justify-between items-center">
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-1 sm:gap-3 md:gap-5 lg:gap-7">
         <Link href="/">
           <Image
             className="cursor-pointer"
@@ -32,14 +34,24 @@ const Header = () => {
         </a>
       </div>
 
-      <h1 className="text-sm font-bold sm:text-base  lg:text-lg">
+      <h1 className="text-sm font-bold sm:text-base md:text-lg lg:text-xl">
         이것저것 좋아하는 개발자
       </h1>
 
-      <div className="flex items-center gap-5 font-bold">
-        <Link href="/">Dev</Link>
-        <Link href="/">Life</Link>
-        <Link href="/">Etc</Link>
+      <div className="text-sm font-bold flex items-center gap-1 sm:gap-3 sm:text-base md:gap-5 md:text-lg lg:gap-7 lg:text-xl">
+        <Link href="/Post" as="/post">
+          Post
+        </Link>
+        {navs.map((nav, index) => (
+          <strong
+            key={index}
+            id={nav}
+            className="cursor-pointer"
+            onClick={handleClick}
+          >
+            {nav}
+          </strong>
+        ))}
       </div>
     </header>
   );

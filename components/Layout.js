@@ -3,8 +3,13 @@ import Head from "next/head";
 import Header from "./Header";
 import Aside from "./Aside";
 import Footer from "./Footer";
+import { useState } from "react";
 
 const Layout = ({ children }) => {
+  const [division, setDivison] = useState("");
+
+  const handleClick = (e) => setDivison(e.target.id);
+
   return (
     <>
       <Head>
@@ -12,9 +17,9 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex-col lg:px-20 md:px-10 sm:px-0">
-        <Header />
+        <Header handleClick={handleClick} />
         <div className="flex">
-          <Aside />
+          <Aside division={division} />
           <article className="border-2 flex-grow">{children}</article>
         </div>
         <Footer />

@@ -2,7 +2,12 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      flexGrow: {
+        2: 2,
+        3: 3,
+      },
+    },
   },
   variants: {
     extend: {},
