@@ -15,12 +15,12 @@ const Aside = ({ division }) => {
 
   if (!division) {
     return (
-      <aside className="hidden border-2 w-72 mr-1 p-5 md:block">
+      <aside className="hidden border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-1/6 mr-1 p-5 md:block">
         <nav>
-          <ul>
+          <ul className="list-none p-0">
             {test2.map((t) => (
-              <li>
-                <a href={`/#${t}`}>{t}</a>
+              <li className="mt-5 mb-5">
+                <a className="text-black font-bold" href={`/#${t}`}>{t}</a>
               </li>
             ))}
           </ul>
@@ -30,12 +30,12 @@ const Aside = ({ division }) => {
   }
 
   return (
-    <aside className="hidden border-2 w-72 mr-1 p-5 md:block">
+    <aside className="hidden border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-1/6 mr-1 p-5 md:block">
       <h2 className="font-bold text-lg">{division}</h2>
       <nav>
-        <ul>
+        <ul className="list-none p-0">
           {test[division].map((t) => (
-            <li>
+            <li className="mt-5 mb-5">
               <details>
                 <summary>{t}</summary>
               </details>

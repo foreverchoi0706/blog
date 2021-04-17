@@ -1,4 +1,7 @@
 module.exports = {
+  corePlugins: {
+    preflight: false, //css 초기화
+  },
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {

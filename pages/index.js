@@ -47,7 +47,9 @@ export default function Home() {
   return (
     <Layout>
       <section className="pl-5 pr-5">
-        <h2 id="Intro" className="font-bold text-2xl mt-10 mb-10">Intro</h2>
+        <h2 id="Intro" className="font-bold text-2xl mt-10 mb-10">
+          Intro
+        </h2>
         <Image
           className="w-screen"
           alt="me"
@@ -58,23 +60,23 @@ export default function Home() {
         />
       </section>
 
-      <hr />
-
       <section className="p-5">
-        <h2 id="History" className="font-bold text-2xl mt-10 mb-10">History</h2>
-        <ul className="flex flex-col lg:flex-row gap-1">
+        <h2 id="History" className="font-bold text-2xl mt-10 mb-10">
+          History
+        </h2>
+        <ul className="list-none p-0 flex flex-col lg:flex-row gap-1">
           {careers.map((career, index) => (
             <li
               key={index}
-              className="border-2 rounded-xl flex-grow ml-3 mr-3 p-5"
+              className="border-2 border-solid border-gray-500 rounded-xl flex-grow ml-3 mr-3 p-5"
             >
               <h3 className="flex justify-between font-bold">
                 <strong>{career.company}</strong>
                 <strong>{career.term}</strong>
               </h3>
-              <ul className="list-disc p-5">
+              <ul className="list-disc p-3 sm:p-4 md:p-5">
                 {career.descriptions.map((description) => (
-                  <li className="text-sm mt-10 mb-10 sm:text-base" key={index}>
+                  <li className="text-sm mt-5 mb-5 sm:text-base" key={index}>
                     {description}
                   </li>
                 ))}
@@ -85,11 +87,11 @@ export default function Home() {
         </ul>
       </section>
 
-      <hr />
-
       <section className="p-5">
-        <h2 id="Stack" className="font-bold text-2xl mt-10 mb-10">Stack</h2>
-        <ul className="grid grid-cols-2 justify-items-center gap-5 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+        <h2 id="Stack" className="font-bold text-2xl mt-10 mb-10">
+          Stack
+        </h2>
+        <ul className="list-none p-0 grid grid-cols-2 justify-items-center gap-5 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
           {stacks.map((stack, index) => (
             <li key={index}>
               <Wh96Image src={`/images/${stack}.png`} />
@@ -97,11 +99,12 @@ export default function Home() {
           ))}
         </ul>
       </section>
-      <hr />
 
       <section className="p-5">
-        <h2 id="Portfolio" className="font-bold text-2xl mt-10 mb-10">Portfolio</h2>
-        <ul className="grid grid-cols-2 justify-items-center gap-5 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+        <h2 id="Portfolio" className="font-bold text-2xl mt-10 mb-10">
+          Portfolio
+        </h2>
+        <ul className="list-none p-0 grid grid-cols-2 justify-items-center gap-5 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
           {stacks.map((stack, index) => (
             <li key={index}>
               <Wh96Image src={`/images/${stack}.png`} />
