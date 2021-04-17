@@ -81,6 +81,9 @@ export default function Home() {
             <Image src="/images/vue.png" width={96} height={96} />
           </li>
           <li>
+            <Image src="/images/express.png" width={96} height={96} />
+          </li>
+          <li>
             <Image src="/images/docker.png" width={96} height={96} />
           </li>
           <li>
@@ -100,44 +103,6 @@ export default function Home() {
 
       <hr />
 
-      <section className="p-5">
-        <h2 className="font-bold text-2xl m-3">Portfolio</h2>
-        <ul className="grid justify-items-center gap-5 lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2">
-          <li>
-            <Image src="/images/html.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/css.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/javascript.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/typescript.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/react.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/vue.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/docker.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/jenkins.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/sass.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/tailwindcss.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/node-js.png" width={96} height={96} />
-          </li>
-        </ul>
-      </section>
 
       <hr />
     </Layout>
