@@ -5,26 +5,25 @@ const Aside = () => {
   return (
     <aside className="border-2 mr-1 w-72 p-5">
       <nav>
-        <li>
-          <Link href="/">TEST</Link>
-        </li>
-        <li>
-          <Link href="/Post" as="/post">
-            TEST
-          </Link>
-        </li>
-        <li>
-          <Link href="">TEST</Link>
-        </li>
-        <li>
-          <Link href="">TEST</Link>
-        </li>
-        <li>
-          <Link href="">TEST</Link>
-        </li>
-        <li>
-          <Link href="">TEST</Link>
-        </li>
+        <ul>
+          <li className="border-2 bg-gray-50 rounded-md">
+            <Link href="/Post" as="/post">
+              TEST
+            </Link>
+          </li>
+          <li className="border-2 bg-gray-50 rounded-md">
+            <Link href="">TEST</Link>
+          </li>
+          <li className="border-2 bg-gray-50 rounded-md">
+            <Link href="">TEST</Link>
+          </li>
+          <li className="border-2 bg-gray-50 rounded-md">
+            <Link href="">TEST</Link>
+          </li>
+          <li className="border-2 bg-gray-50 rounded-md">
+            <Link href="">TEST</Link>
+          </li>
+        </ul>
       </nav>
       <div className="flex justify-around p-5">
         <a href="https://github.com/foreverchoi0706" target="blank">

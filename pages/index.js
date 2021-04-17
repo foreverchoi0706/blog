@@ -21,14 +21,18 @@ const careers = [
   },
 ];
 
-const stacks = [];
+const stacks = ["/images/html.png"];
+
+const Wh96Image = ({ src }) => {
+  return <Wh96Image src={src} width={96} height={96} />;
+};
 
 export default function Home() {
   return (
     <Layout>
       <section className="p-5">
         <h2 className="font-bold text-2xl m-3">Intro</h2>
-        <Image
+        <Wh96Image
           className="w-full"
           src="/images/me.jpg"
           width={"auto"}
@@ -63,83 +67,44 @@ export default function Home() {
         <h2 className="font-bold text-2xl m-3">Stack</h2>
         <ul className="grid justify-items-center gap-5 lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2">
           <li>
-            <Image src="/images/html.png" width={96} height={96} />
+            <Wh96Image src="/images/html.png" />
           </li>
           <li>
-            <Image src="/images/css.png" width={96} height={96} />
+            <Wh96Image src="/images/css.png" />
           </li>
           <li>
-            <Image src="/images/javascript.png" width={96} height={96} />
+            <Wh96Image src="/images/javascript.png" />
           </li>
           <li>
-            <Image src="/images/typescript.png" width={96} height={96} />
+            <Wh96Image src="/images/typescript.png" />
           </li>
           <li>
-            <Image src="/images/react.png" width={96} height={96} />
+            <Wh96Image src="/images/react.png" />
           </li>
           <li>
-            <Image src="/images/vue.png" width={96} height={96} />
+            <Wh96Image src="/images/vue.png" />
           </li>
           <li>
-            <Image src="/images/docker.png" width={96} height={96} />
+            <Wh96Image src="/images/docker.png" />
           </li>
           <li>
-            <Image src="/images/jenkins.png" width={96} height={96} />
+            <Wh96Image src="/images/jenkins.png" />
           </li>
           <li>
-            <Image src="/images/sass.png" width={96} height={96} />
+            <Wh96Image src="/images/sass.png" />
           </li>
           <li>
-            <Image src="/images/tailwindcss.png" width={96} height={96} />
+            <Wh96Image src="/images/tailwindcss.png" />
+          </li>
+
+          <li>
+            <Wh96Image src="/images/express.png" />
           </li>
           <li>
-            <Image src="/images/node-js.png" width={96} height={96} />
+            <Wh96Image src="/images/node-js.png" />
           </li>
         </ul>
       </section>
-
-      <hr />
-
-      <section className="p-5">
-        <h2 className="font-bold text-2xl m-3">Portfolio</h2>
-        <ul className="grid justify-items-center gap-5 lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2">
-          <li>
-            <Image src="/images/html.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/css.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/javascript.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/typescript.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/react.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/vue.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/docker.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/jenkins.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/sass.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/tailwindcss.png" width={96} height={96} />
-          </li>
-          <li>
-            <Image src="/images/node-js.png" width={96} height={96} />
-          </li>
-        </ul>
-      </section>
-
-      <hr />
     </Layout>
   );
 }
