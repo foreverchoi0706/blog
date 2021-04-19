@@ -3,9 +3,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const test = {
-  Dev: ["Intro", "dev2"],
-  Life: ["life1", "life1", "life1"],
-  Etc: ["Etc1", "Etc2"],
+  DEV: ["Intro", "dev2"],
+  LIFE: ["life1", "life1", "life1"],
+  ETC: ["Etc1", "Etc2"],
 };
 
 const test2 = ["Intro", "History", "Stack", "Portfolio"];

@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const navs = ["Dev", "Life", "Etc"];
+const navs = ["DEV", "LIFE", "ETC"];
 
 const Header = ({ handleClick }) => {
   return (
-    <header className="border-t-0 border-r-0 border-b-2 border-l-0 border-solid border-gray-400 p-0 flex justify-between items-center sm:px-3 md:px-5 lg:px-7">
-      <div>
+    <header className="border-t-0 border-r-0 border-b-2 border-l-0 border-solid border-gray-400 p-0 flex justify-between items-stretch sm:px-3 md:px-5 lg:px-7">
+      <div className="flex flex-col">
         <Link href="/">
           <Image
             className="cursor-pointer"
@@ -30,27 +30,26 @@ const Header = ({ handleClick }) => {
           <Image
             src="/images/mail.png"
             alt="Picture of the author"
-            
             width={48}
             height={48}
           />
         </a>
       </div>
 
-      <h1 className="text-sm font-bold sm:text-base md:text-lg lg:text-xl">
-        {"<"}이것저것 좋아하는 개발자{"/>"}
+      <h1 className="self-center font-bold text-sm sm:text-base md:text-lg lg:text-xl">
+        이것저것 좋아하는 개발자
       </h1>
 
-      <div className="text-sm font-bold flex items-center gap-1 sm:gap-3 sm:text-base md:gap-5 md:text-lg lg:gap-7 lg:text-xl">
+      <div className="flex flex-col justify-around">
         {navs.map((nav, index) => (
-          <strong
+          <h2
+            className="m-0 font-bold cursor-pointer text-sm sm:text-base md:text-lg lg:text-xl"
             key={index}
             id={nav}
-            className="cursor-pointer"
             onClick={handleClick}
           >
             {nav}
-          </strong>
+          </h2>
         ))}
       </div>
     </header>

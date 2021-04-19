@@ -67,7 +67,7 @@ export default function Home() {
           {careers.map((career, index) => (
             <li
               key={career.company}
-              className="border-2 border-solid border-gray-500 rounded-xl flex-grow mb-1 ml-3 mr-3 p-3 md:p-5"
+              className="border-2 border-solid border-gray-500 rounded-xl flex-grow mb-5 ml-3 mr-3 p-3 md:p-5"
             >
               <h3 className="flex justify-between font-bold m-3">
                 <strong className="text-sm sm:text-base md:text-lg lg:text-xl">
