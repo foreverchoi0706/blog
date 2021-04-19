@@ -1,13 +1,13 @@
 import "../styles/globals.css";
 import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 //reducers
 import root from "../reducers/root";
 
 const store = configureStore({
   reducer: root,
-  middleware: [logger],
+  middleware: [...getDefaultMiddleware(), logger],
   devTools: true,
 });
 

@@ -36,8 +36,11 @@ const Aside = ({ division }) => {
         <ul className="list-none p-0">
           {test[division].map((t) => (
             <li className="mt-5 mb-5">
-              <details>
+              <details className="cursor-pointer">
                 <summary>{t}</summary>
+                <details>
+                <summary>{t}</summary>
+                </details>
               </details>
             </li>
           ))}

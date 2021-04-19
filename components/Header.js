@@ -5,7 +5,7 @@ const navs = ["Dev", "Life", "Etc"];
 
 const Header = ({ handleClick }) => {
   return (
-    <header className="border-t-0 border-r-0 border-b-2 border-l-0 border-solid border-gray-400 p-5 mb-1 flex justify-between items-center">
+    <header className="border-t-0 border-r-0 border-b-2 border-l-0 border-solid border-gray-400 p-5 flex justify-between items-center">
       <div className="flex items-center gap-1 sm:gap-3 md:gap-5 lg:gap-7">
         <Link href="/">
           <Image
