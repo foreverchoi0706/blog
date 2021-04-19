@@ -26,14 +26,14 @@ export default function Home() {
     <Layout>
       <form className="flex flex-col p-5" onSubmit={handleSubmit}>
         <input
-          className=" border-t-0 border-r-0 border-b-2 border-l-0 border-solid text-2xl"
+          className=" border-t-0 border-r-0 border-b-2 border-l-0 border-solid text-sm sm:text-base md:text-lg lg:text-xl"
           type="text"
           placeholder="Title"
           required
         />
         <div className="flex border-t-0 border-r-0 border-b-2 border-l-0 border-solid border-gray-500">
-          <select className="border-none flex-grow text-2xl" required>
-            <option value={null} selected disabled>
+          <select className="border-none flex-grow text-sm sm:text-base md:text-lg lg:text-xl" required>
+            <option value={null} defaultChecked disabled>
               Select
             </option>
             <option>Dev</option>
@@ -41,7 +41,7 @@ export default function Home() {
             <option>Etc</option>
           </select>
           <input
-            className="border-none flex-grow-3 text-2xl"
+            className="border-none flex-grow-3 text-sm sm:text-base md:text-lg lg:text-xl"
             type="text"
             placeholder="Tag"
             required

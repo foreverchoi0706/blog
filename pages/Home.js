@@ -51,7 +51,6 @@ export default function Home() {
           Intro
         </h2>
         <Image
-          className="w-screen"
           alt="me"
           src="/images/me.jpg"
           layout="responsive"
@@ -70,7 +69,7 @@ export default function Home() {
               key={career.company}
               className="border-2 border-solid border-gray-500 rounded-xl flex-grow mb-1 ml-3 mr-3 p-3 md:p-5"
             >
-              <h3 className="flex justify-between font-bold">
+              <h3 className="flex justify-between font-bold m-3">
                 <strong className="text-sm sm:text-base md:text-lg lg:text-xl">
                   {career.company}
                 </strong>
@@ -78,7 +77,7 @@ export default function Home() {
                   {career.term}
                 </strong>
               </h3>
-              <ul className="list-disc p-3 sm:p-4 md:p-5">
+              <ul className="list-disc p-5 sm:p-7 md:p-9">
                 {career.descriptions.map((description) => (
                   <li className="text-sm mt-5 mb-5 sm:text-base" key={index}>
                     {description}

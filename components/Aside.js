@@ -15,8 +15,11 @@ const Aside = ({ division }) => {
 
   if (!division) {
     return (
-      <aside className="hidden border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-1/6 mr-1 p-5 md:block">
+      <aside className="flex-shrink-0 hidden border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-48 mr-1 p-5 md:block">
         <nav>
+        <Link href="/Post" as="/post">
+         <Image src="/images/pencil.png" alt="write" width={24} height={24}/>
+        </Link>
           <ul className="list-none p-0">
             {test2.map((t) => (
               <li className="mt-5 mb-5">
