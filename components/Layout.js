@@ -6,9 +6,9 @@ import Footer from "./Footer";
 import { useState } from "react";
 
 const Layout = ({ children }) => {
-  const [division, setDivison] = useState("");
+  const [area, setArea] = useState("");
 
-  const handleClick = (e) => setDivison(e.target.id);
+  const handleClick = (e) => setArea(e.target.id);
 
   return (
     <>
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
       <div className="flex-col px-0 sm:px-12 md:px-24 lg:px-36">
         <Header handleClick={handleClick} />
         <div className="flex">
-          <Aside division={division} />
+          <Aside area={area} />
           <article className="border-2 flex-grow">{children}</article>
         </div>
         <Footer />

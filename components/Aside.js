@@ -1,29 +1,29 @@
 import Link from "next/link";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
+import { getPosts } from "../reducers/post";
 
-const test = {
-  DEV: ["Intro", "dev2"],
-  LIFE: ["life1", "life1", "life1"],
-  ETC: ["Etc1", "Etc2"],
-};
+const defaultMenu = ["Intro", "History", "Stack", "Portfolio"];
 
-const test2 = ["Intro", "History", "Stack", "Portfolio"];
+const Aside = ({ area }) => {
+  const dispatch = useDispatch();
 
-const Aside = ({ division }) => {
-  useEffect(() => {}, [division]);
+  const postList = useSelector((root) => root.post.postList, shallowEqual);
 
-  if (!division) {
+  useEffect(() => {
+    area && dispatch(getPosts(area));
+  }, [area]);
+
+  if (!area) {
     return (
       <aside className="flex-shrink-0 hidden border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-48 mr-1 p-5 md:block">
         <nav>
-        <Link href="/Post" as="/post">
-         <Image src="/images/pencil.png" alt="write" width={24} height={24}/>
-        </Link>
           <ul className="list-none p-0">
-            {test2.map((t) => (
+            {defaultMenu.map((t) => (
               <li className="mt-5 mb-5">
-                <a className="text-black font-bold" href={`/#${t}`}>{t}</a>
+                <a className="text-black font-bold" href={`/#${t}`}>
+                  {t}
+                </a>
               </li>
             ))}
           </ul>
@@ -33,17 +33,14 @@ const Aside = ({ division }) => {
   }
 
   return (
-    <aside className="hidden border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-1/6 mr-1 p-5 md:block">
-      <h2 className="font-bold text-lg">{division}</h2>
+    <aside className="flex-shrink-0 hidden border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-48 mr-1 p-5 md:block">
+      <h2 className="font-bold text-lg">{area}</h2>
       <nav>
         <ul className="list-none p-0">
-          {test[division].map((t) => (
+          {postList.map((post) => (
             <li className="mt-5 mb-5">
               <details className="cursor-pointer">
-                <summary>{t}</summary>
-                <details>
-                <summary>{t}</summary>
-                </details>
+                <summary>{post.tag}</summary>
               </details>
             </li>
           ))}

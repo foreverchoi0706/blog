@@ -24,15 +24,20 @@ export default function Home() {
 
   return (
     <Layout>
-      <form className="flex flex-col p-5" onSubmit={handleSubmit}>
+      <form className="flex flex-col p-5" method="post" onSubmit={handleSubmit}>
         <input
           className=" border-t-0 border-r-0 border-b-2 border-l-0 border-solid text-sm sm:text-base md:text-lg lg:text-xl"
+          name="title"
           type="text"
           placeholder="Title"
           required
         />
         <div className="flex border-t-0 border-r-0 border-b-2 border-l-0 border-solid border-gray-500">
-          <select className="border-none flex-grow text-sm sm:text-base md:text-lg lg:text-xl" required>
+          <select
+            name="area"
+            className="border-none flex-grow text-sm sm:text-base md:text-lg lg:text-xl"
+            required
+          >
             <option value={null} defaultChecked disabled>
               Select
             </option>
@@ -43,6 +48,7 @@ export default function Home() {
           <input
             className="border-none flex-grow-3 text-sm sm:text-base md:text-lg lg:text-xl"
             type="text"
+            name="tag"
             placeholder="Tag"
             required
           />
@@ -51,6 +57,7 @@ export default function Home() {
         <div className="flex">
           <textarea
             className="w-2/5 border-t-0 border-r-2 border-b-0 border-l-0 resize-none p-5 focus:outline-none"
+            name="content"
             placeholder="Text"
             onChange={handleChange}
             required
@@ -62,15 +69,15 @@ export default function Home() {
             children={markdown}
           ></ReactMarkdown>
         </div>
-        <div className="flex gap-5">
+        <div className="flex p-5">
           <button
-            className="text-white bg-black border-none cursor-pointer flex-grow"
+            className=" mx-5 text-white bg-black border-none cursor-pointer flex-grow"
             type="submit"
           >
             작성
           </button>
           <button
-            className="text-white bg-black border-none cursor-pointer flex-grow"
+            className=" mx-5 text-white bg-black border-none cursor-pointer flex-grow"
             type="button"
           >
             임시보관

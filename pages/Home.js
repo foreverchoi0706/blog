@@ -102,19 +102,6 @@ export default function Home() {
           ))}
         </ul>
       </section>
-
-      <section className="p-5">
-        <h2 id="Portfolio" className="font-bold text-2xl mt-10 mb-10">
-          Portfolio
-        </h2>
-        <ul className="list-none p-0 grid grid-cols-2 justify-items-center gap-5 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
-          {stacks.map((stack, index) => (
-            <li key={index}>
-              <Wh96Image src={`/images/${stack}.png`} />
-            </li>
-          ))}
-        </ul>
-      </section>
     </Layout>
   );
 }

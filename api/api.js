@@ -9,8 +9,14 @@ const instance = axios.create({
 });
 
 const api = {
-  read: async (id) => await instance.get("/read", id),
-  create: async (formData) => await instance.post("/create", formData),
+  getPosts: async (area) =>
+    await instance.get("/post/postList", {
+      params: {
+        area,
+      },
+    }),
+  read: async (id) => await instance.get("/post/read", id),
+  create: async (formData) => await instance.post("/post/create", formData),
 };
 
 export default api;
