@@ -66,7 +66,7 @@ export default function Home() {
         <ul className="list-none p-0 flex flex-col lg:flex-row ">
           {careers.map((career, index) => (
             <li
-              key={career.company}
+              key={index}
               className="border-2 border-solid border-gray-500 rounded-xl flex-grow mb-5 ml-3 mr-3 p-3 md:p-5"
             >
               <h3 className="flex justify-between font-bold m-3">
@@ -78,7 +78,7 @@ export default function Home() {
                 </strong>
               </h3>
               <ul className="list-disc p-5 sm:p-7 md:p-9">
-                {career.descriptions.map((description) => (
+                {career.descriptions.map((description,index) => (
                   <li className="text-sm mt-5 mb-5 sm:text-base" key={index}>
                     {description}
                   </li>

@@ -7,7 +7,9 @@ import root from "../reducers/root";
 
 const store = configureStore({
   reducer: root,
-  middleware: [...getDefaultMiddleware(), logger],
+  middleware: [...getDefaultMiddleware({
+    serializableCheck: false
+  }), logger],
   devTools: true,
 });
 

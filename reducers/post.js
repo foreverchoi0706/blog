@@ -1,9 +1,14 @@
 import { createSlice, createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import api from "../api/api";
 
-export const getPosts = createAsyncThunk("GET_POSTS", async (area) =>
-  api.getPosts(area)
+export const getTagList = createAsyncThunk("GET_TAG_LIST", async (area) =>
+  api.getTagList(area)
 );
+
+export const getPostList = createAsyncThunk("GET_POSTS_LIST", async (tag) => {
+  console.log(tag);
+  return api.getPostList(tag);
+});
 
 export const create = createAsyncThunk("CREATE", async (formData) =>
   api.create(formData)
@@ -20,15 +25,25 @@ export const deletePost = createAsyncThunk("DELETE", async (id) =>
 );
 
 const initialState = {
-  postList: [],
+  tagList: [],
+  postList: {},
 };
 
 const post = createReducer(initialState, {
-  [getPosts.fulfilled]: (state, action) => {
+  [getTagList.fulfilled]: (state, action) => {
     console.log(action);
     return {
       ...state,
-      postList: action.payload.data,
+      tagList: action.payload.data,
+    };
+  },
+  [getPostList.fulfilled]: (state, action) => {
+    return {
+      ...state,
+      postList: {
+        ...state.postList,
+        [action.meta.arg]: action.payload.data,
+      },
     };
   },
 });
