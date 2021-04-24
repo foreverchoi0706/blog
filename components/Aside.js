@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { getTagList, getPostList } from "../reducers/post";
@@ -25,9 +26,7 @@ const Aside = ({ area }) => {
     dispatch(getPostList(tag));
   };
 
-  const handelBackClick = () => {
-    setState(!state);
-  };
+  const handelBackClick = () => setState(!state);
 
   if (!area) {
     return (
@@ -60,8 +59,17 @@ const Aside = ({ area }) => {
         state ? "absolute" : "hidden"
       } top-0 left-0 h-full bg-white z-10 border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-48 mr-1  md:block md:static md:h-auto`}
     >
-      <button className="block md:hidden" onClick={handelBackClick}>BACK</button>
-      <h2 className="font-bold text-lg">{area}</h2>
+      <div className="flex justify-between items-center">
+        <h2 className="font-bold text-lg">{area}</h2>
+        <Image
+          className="cursor-pointer block md:hidden"
+          src="/images/close.png"
+          layout="intrinsic"
+          width={24}
+          height={24}
+          onClick={handelBackClick}
+        />
+      </div>
       <nav>
         <ul className="list-none p-0">
           {tagList.map((post) => (
@@ -81,9 +89,6 @@ const Aside = ({ area }) => {
           ))}
         </ul>
       </nav>
-      {/* <div className="animate-bounce fixed cursor-pointer">
-        <Image src="/images/menu.png" width={48} height={48} />
-      </div> */}
     </aside>
   );
 };
