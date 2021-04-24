@@ -18,8 +18,9 @@ const Post = () => {
   }, [router.query]);
 
   return (
-    <div className="min-h-screen">
-      <ReactMarkdown remarkPlugins={[gfm]} children={post.content} />
+    <div>
+      das
+      <ReactMarkdown className="bg-red-100 break-all"  remarkPlugins={[gfm]} children={post.content} />
     </div>
   );
 };

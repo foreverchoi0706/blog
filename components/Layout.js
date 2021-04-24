@@ -6,9 +6,18 @@ import Footer from "./Footer";
 import { useState } from "react";
 
 const Layout = ({ children }) => {
-  const [area, setArea] = useState("");
+  const [area, setArea] = useState({
+    division: "",
+    isClicked: false,
+  });
 
-  const handleClick = (e) => setArea(e.target.id);
+  const handleClick = (e) => {
+    if (area.division === e.target.id) {
+      setArea({ isClicked: !area.isClicked });
+    } else {
+      setArea({ division: e.target.id });
+    }
+  };
 
   return (
     <>
@@ -16,10 +25,10 @@ const Layout = ({ children }) => {
         <title>foreverChoi</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex-col px-0 sm:px-24 md:px-48 lg:px-64">
+      <div className="flex-col px-0 sm:px-12 md:px-24 lg:36 xl::px-64">
         <Header handleClick={handleClick} />
         <div className="flex relative">
-          <Aside area={area} />
+          <Aside area={area} handleClick={handleClick} />
           <article className="border-2 flex-grow">{children}</article>
         </div>
         <Footer />

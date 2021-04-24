@@ -1,24 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { getTagList, getPostList } from "../reducers/post";
 
 const defaultMenu = ["Intro", "History", "Stack", "Portfolio"];
 
-const Aside = ({ area }) => {
-  const [state, setState] = useState(false);
-
+const Aside = ({ area, handleClick }) => {
   const { postList, tagList } = useSelector((root) => root.post, shallowEqual);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (area) {
-      dispatch(getTagList(area));
-      setState(true);
+    if (area.division) {
+      dispatch(getTagList(area.division));
     }
-    console.log(state);
   }, [area]);
 
   const handleTagClick = (e) => {
@@ -26,9 +22,7 @@ const Aside = ({ area }) => {
     dispatch(getPostList(tag));
   };
 
-  const handelBackClick = () => setState(!state);
-
-  if (!area) {
+  if (!area.division) {
     return (
       <aside
         className={`flex-shrink-0 hidden bg-white z-10 border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-48 mr-1  md:block md:static md:h-auto`}
@@ -56,19 +50,18 @@ const Aside = ({ area }) => {
   return (
     <aside
       className={`flex-shrink-0 ${
-        state ? "absolute" : "hidden"
+        area.isClicked || area.division ? "absolute" : "hidden"
       } top-0 left-0 h-full bg-white z-10 border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-48 mr-1  md:block md:static md:h-auto`}
     >
-      <div className="flex justify-between items-center">
-        <h2 className="font-bold text-lg">{area}</h2>
+      <div className="flex items-center justify-between">
         <Image
           className="cursor-pointer block md:hidden"
           src="/images/close.png"
-          layout="intrinsic"
           width={24}
           height={24}
-          onClick={handelBackClick}
+          onClick={handleClick}
         />
+        <h2 className="font-bold text-lg mr-5">{area.division}</h2>
       </div>
       <nav>
         <ul className="list-none p-0">

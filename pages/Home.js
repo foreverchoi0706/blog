@@ -8,7 +8,7 @@ const careers = [
     term: "2020/01 ~ 2021/01",
     descriptions: [
       "Java 기반 금융계 코어 시스템 개발 및 유지보수",
-      "React.js 기반 금융계 어드민 사이트 개발",
+      "React.js기반 ERP 플랫폼 서비스 개발",
     ],
     position: "인턴",
   },
@@ -16,8 +16,8 @@ const careers = [
     company: "Fatos Co.,Ltd ",
     term: "2021/02 ~",
     descriptions: [
-      "React.js기반 ERP 플랫폼 서비스 개발",
-      "Vue.js기반 싱가폴 국가사업 웹뷰 개발",
+      "Vue.js기반 싱가폴 웹뷰 솔류션 개발",
+      "Vue.js기반 해양수산부 웹 솔루션 개발",
     ],
     position: "주임연구원",
   },
@@ -78,7 +78,7 @@ export default function Home() {
                 </strong>
               </h3>
               <ul className="list-disc p-5 sm:p-7 md:p-9">
-                {career.descriptions.map((description,index) => (
+                {career.descriptions.map((description, index) => (
                   <li className="text-sm mt-5 mb-5 sm:text-base" key={index}>
                     {description}
                   </li>
