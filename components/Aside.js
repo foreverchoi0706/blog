@@ -10,22 +10,26 @@ const Aside = ({ area }) => {
 
   const { postList, tagList } = useSelector((root) => root.post, shallowEqual);
 
+  useEffect(() => {
+    area && dispatch(getTagList(area));
+  }, [area]);
+  
   const handleClickTag = (e) => {
     const tag = e.target.innerText;
     dispatch(getPostList(tag));
   };
-
-  useEffect(() => {
-    area && dispatch(getTagList(area));
-  }, [area]);
 
   if (!area) {
     return (
       <aside className="flex-shrink-0 hidden border-t-0 border-r-2 border-b-0 border-l-0 border-solid border-gray-400 w-48 mr-1 p-5 md:block">
         <nav>
           <ul className="list-none p-0">
-            <li><Link href="/Post" as="/post">Post</Link></li>
-            {defaultMenu.map((t,index) => (
+            <li>
+              <Link href="/Post" as="/post">
+                Post
+              </Link>
+            </li>
+            {defaultMenu.map((t, index) => (
               <li key={index} className="mt-5 mb-5">
                 <a className="text-black font-bold" href={`/#${t}`}>
                   {t}

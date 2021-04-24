@@ -21,8 +21,13 @@ const api = {
         tag,
       },
     }),
-  read: async (id) => await instance.get("/post/read", id),
-  create: async (formData) => await instance.post("/post/create", formData),
+  readPost: async (id) =>
+    await instance.get("/post/read", {
+      params: {
+        id,
+      },
+    }),
+  createPost: async (formData) => await instance.post("/post/create", formData),
 };
 
 export default api;

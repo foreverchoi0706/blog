@@ -4,6 +4,7 @@ import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 //reducers
 import root from "../reducers/root";
+import Layout from "../components/Layout";
 
 const store = configureStore({
   reducer: root,
@@ -16,7 +17,9 @@ const store = configureStore({
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
+      <Layout>
       <Component {...pageProps} />
+      </Layout>
     </Provider>
   );
 }

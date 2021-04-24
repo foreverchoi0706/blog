@@ -10,15 +10,17 @@ export const getPostList = createAsyncThunk("GET_POSTS_LIST", async (tag) => {
   return api.getPostList(tag);
 });
 
-export const create = createAsyncThunk("CREATE", async (formData) =>
-  api.create(formData)
+export const createPost = createAsyncThunk("CREATE", async (formData) =>
+  api.createPost(formData)
 );
 
 export const update = createAsyncThunk("DELETE", async (id, formData) =>
   api.update(id, formData)
 );
 
-export const read = createAsyncThunk("READ", async (id) => api.read(id));
+export const readPost = createAsyncThunk("READ", async (id) =>
+  api.readPost(id)
+);
 
 export const deletePost = createAsyncThunk("DELETE", async (id) =>
   api.delete(id)
@@ -27,6 +29,7 @@ export const deletePost = createAsyncThunk("DELETE", async (id) =>
 const initialState = {
   tagList: [],
   postList: {},
+  post: {},
 };
 
 const post = createReducer(initialState, {
@@ -45,6 +48,9 @@ const post = createReducer(initialState, {
         [action.meta.arg]: action.payload.data,
       },
     };
+  },
+  [readPost.fulfilled]: (state, action) => {
+    return { ...state, post: action.payload.data };
   },
 });
 

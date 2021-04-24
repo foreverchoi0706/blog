@@ -1,16 +1,27 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-//components
-import Layout from "../../components/Layout";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
+import gfm from "remark-gfm";
+import ReactMarkdown from "react-markdown";
+import { readPost } from "../../reducers/post";
 
 const Post = () => {
   const router = useRouter();
 
-  useEffect(() => {
-    console.log(router);
-  });
+  const { post } = useSelector((root) => root.post, shallowEqual);
 
-  return <Layout>dasdad</Layout>;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const { id } = router.query;
+    dispatch(readPost(id));
+  }, [router.query]);
+
+  return (
+    <div>
+      <ReactMarkdown remarkPlugins={[gfm]} children={post.content} />
+    </div>
+  );
 };
 
 export default Post;

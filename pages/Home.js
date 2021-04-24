@@ -45,7 +45,7 @@ const Wh96Image = ({ src }) => {
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <section className="pl-1 pr-1 md:pl-3 md:pr-3 lg:pl-5 lg:pr-5">
         <h2 id="Intro" className="font-bold text-2xl mt-10 mb-10">
           Intro
@@ -102,6 +102,6 @@ export default function Home() {
           ))}
         </ul>
       </section>
-    </Layout>
+    </>
   );
 }

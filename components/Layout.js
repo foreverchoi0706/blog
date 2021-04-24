@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex-col px-0 sm:px-12 md:px-24 lg:px-36">
+      <div className="flex-col px-0 sm:px-24 md:px-48 lg:px-64">
         <Header handleClick={handleClick} />
         <div className="flex">
           <Aside area={area} />
