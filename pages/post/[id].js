@@ -18,7 +18,7 @@ const Post = () => {
   }, [router.query]);
 
   return (
-    <div>
+    <div className="min-h-screen">
       <ReactMarkdown remarkPlugins={[gfm]} children={post.content} />
     </div>
   );

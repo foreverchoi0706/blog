@@ -13,12 +13,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>foreverChoi</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex-col px-0 sm:px-24 md:px-48 lg:px-64">
         <Header handleClick={handleClick} />
-        <div className="flex">
+        <div className="flex relative">
           <Aside area={area} />
           <article className="border-2 flex-grow">{children}</article>
         </div>
