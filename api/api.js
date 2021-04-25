@@ -2,10 +2,10 @@ import axios from "axios";
 
 const DEV_URL = "http://localhost:8080";
 
-const DEP_URL = "";
+const DEP_URL = "http://blog_back.foreverchoi0706.com";
 
 const instance = axios.create({
-  baseURL: DEV_URL,
+  baseURL: DEP_URL,
 });
 
 const api = {
