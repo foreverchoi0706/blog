@@ -7,11 +7,11 @@
         {
             "type": "pwa-node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "express",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "src/index.js"
+            "program": "express/src/index.js"
         }
     ]
 }
