@@ -1,12 +1,12 @@
 {
-  "name": "my_jest",
+  "name": "jest",
   "version": "1.0.0",
-  "description": "my_jest",
+  "description": "jest",
   "main": "index.js",
   "scripts": {
     "test": "jest test"
   },
-  "author": "",
+  "author": "foreverchoi",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.24",
